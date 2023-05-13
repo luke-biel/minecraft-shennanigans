@@ -64,8 +64,6 @@ function harvest()
   if not block.state.age == WHEAT_MATURE_AGE then return end
   -- block is a mature wheat
   turtle.digDown()
-  moveSeedsToSlot1()
-  turtle.placeDown()
 end
 
 --[[
@@ -92,6 +90,8 @@ for i=0,3,1 do
   -- Move to the end in first row
   for j=0,6,1 do
     harvest()
+    moveSeedsToSlot1()
+    turtle.placeDown()
     turtle.forward()
   end
   turtle.turnLeft()
@@ -101,6 +101,8 @@ for i=0,3,1 do
   -- Move to the end in second row
   for j=0,6,1 do
     harvest()
+    moveSeedsToSlot1()
+    turtle.placeDown()
     turtle.forward()
   end
   turtle.turnRight()
