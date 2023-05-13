@@ -28,7 +28,7 @@ end
 # Start moving and harvesting
 ]]
 turtle.turnLeft()
-for i=0,7,1 do
+for i=0,3,1 do
   for j=0,7,1 do
     harvest()
     turtle.forward()
@@ -36,6 +36,13 @@ for i=0,7,1 do
   turtle.turnLeft()
   turtle.forward()
   turtle.turnLeft()
+  for j=0,7,1 do
+    harvest()
+    turtle.forward()
+  end
+  turtle.turnRight()
+  turtle.forward()
+  turtle.turnRight()
 end
 
 --[[
