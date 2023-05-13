@@ -29,14 +29,15 @@ end
 ]]
 turtle.turnLeft()
 for i=0,3,1 do
-  for j=0,7,1 do
+  for j=0,6,1 do
     harvest()
     turtle.forward()
   end
   turtle.turnLeft()
   turtle.forward()
   turtle.turnLeft()
-  for j=0,7,1 do
+
+  for j=0,6,1 do
     harvest()
     turtle.forward()
   end
