@@ -22,8 +22,8 @@ end
 function moveSeedsToSlot1() 
   -- Find slot with seeds
   seeds = -1
-  for i=0,15,1 do
-    detail = turtle.getItemDetail(i)
+  for i=1,16,1 do
+    local detail = turtle.getItemDetail(i)
     if detail.name == "minecraft:wheat_seeds" then
       seeds = i
     end
@@ -38,8 +38,8 @@ function moveSeedsToSlot1()
     print("Error, No seeds")
 
     empty = -1
-    for i=0,15,1 do
-      detail = turtle.getItemDetail(i)
+    for i=1,16,1 do
+      local detail = turtle.getItemDetail(i)
       if detail ~= nil then empty = i end
     end
     if empty >= 0 then
@@ -72,9 +72,9 @@ end
   Drops off wheat into inventory in front
 ]]
 function dropOffWheat() 
-  for i=0,15,1 do
+  for i=1,16,1 do
     detail = turtle.getItemDetail(i)
-    if detail.name == "minecraft:wheat_seeds" || detail.name == "minecraft:wheat" then
+    if detail.name == "minecraft:wheat_seeds" or detail.name == "minecraft:wheat" then
       turtle.select(i)
       turtle.drop()
     end
@@ -82,6 +82,7 @@ function dropOffWheat()
   turtle.select(1)
 end
 
+refuel()
 --[[
 # Start moving and harvesting
 ]]
