@@ -24,7 +24,7 @@ function moveSeedsToSlot1()
   seeds = -1
   for i=1,16,1 do
     local detail = turtle.getItemDetail(i)
-    if detail.name == "minecraft:wheat_seeds" then
+    if detail ~= nil and detail.name == "minecraft:wheat_seeds" then
       seeds = i
     end
   end
@@ -74,7 +74,7 @@ end
 function dropOffWheat() 
   for i=1,16,1 do
     detail = turtle.getItemDetail(i)
-    if detail.name == "minecraft:wheat_seeds" or detail.name == "minecraft:wheat" then
+    if detail ~= nil and detail.name == "minecraft:wheat_seeds" or detail.name == "minecraft:wheat" then
       turtle.select(i)
       turtle.drop()
     end
