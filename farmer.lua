@@ -21,7 +21,7 @@ end
 ]]
 function moveSeedsToSlot1() 
   -- Find slot with seeds
-  seeds = -1
+  local seeds = -1
   for i=1,16,1 do
     local detail = turtle.getItemDetail(i)
     if detail ~= nil and detail.name == "minecraft:wheat_seeds" then
@@ -37,7 +37,7 @@ function moveSeedsToSlot1()
     -- Empty out the slot 1, so no item placement happens
     print("Error, No seeds")
 
-    empty = -1
+    local empty = -1
     for i=1,16,1 do
       local detail = turtle.getItemDetail(i)
       if detail ~= nil then empty = i end
@@ -58,7 +58,7 @@ end
   Check if the block is harvestable wheat, harvest it, find seeds in inventory, and plant them
 ]]
 function harvest()
-  isBlock, block = turtle.inspectDown()
+  local isBlock, block = turtle.inspectDown()
   if not isBlock then return end
   if not block.name == "minecraft:wheat" then return end
   if not block.state.age == WHEAT_MATURE_AGE then return end
@@ -73,7 +73,7 @@ end
 ]]
 function dropOffWheat() 
   for i=1,16,1 do
-    detail = turtle.getItemDetail(i)
+    local detail = turtle.getItemDetail(i)
     if detail ~= nil and detail.name == "minecraft:wheat_seeds" or detail.name == "minecraft:wheat" then
       turtle.select(i)
       turtle.drop()
